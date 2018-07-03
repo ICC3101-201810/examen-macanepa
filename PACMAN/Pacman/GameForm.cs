@@ -13,6 +13,7 @@ namespace Pacman
 {
     public partial class GameForm : Form
     {
+        MainMenu mainMenu;
         public event EventHandler OnUpdate;
         int x = 0;
         int y = 0;
@@ -33,9 +34,10 @@ namespace Pacman
         List<Fruit> listFruit = new List<Fruit>();
         List<enemy> enemies = new List<enemy>();
 
-        public GameForm(Player player)
+        public GameForm(Player player,MainMenu mainMenu)
         {
             InitializeComponent();
+            this.mainMenu = mainMenu; 
             playerNameLabel.Text = "PLAYER: "+player.name;
             this.enemies = enemies;
 
@@ -171,7 +173,8 @@ namespace Pacman
 
         private void GameForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            mainMenu.Show();
+            //Application.Exit();
         }
 
         private void randomFruit()

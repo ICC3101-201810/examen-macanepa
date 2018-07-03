@@ -39,7 +39,7 @@ namespace Pacman
             enemies.Add(red);
             enemies.Add(pink);
 
-            GameForm gameForm = new GameForm(player);
+            GameForm gameForm = new GameForm(player,mainMenu);
             GameController gameController = new GameController(gameForm, player,enemies);
             mainMenu.Hide();
             gameForm.Show();
