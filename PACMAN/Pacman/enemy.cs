@@ -13,7 +13,7 @@ namespace Pacman
         public event EventHandler OnKill;
 
         Player player;
-
+        int c =0;
         public int currentPosX { get; private set; }
         public int currentPosY { get; private set; }
 
@@ -88,12 +88,15 @@ namespace Pacman
             currentPosY += Convert.ToInt32(5000 * dirY);
 
         }
-
         private void kill()
         {
             if (distancePlayer < 20)
             {
-                OnKill(this,EventArgs.Empty);
+                if (c < 1)
+                {
+                    OnKill(this, EventArgs.Empty);
+                }
+                c++;
             }
         }
 

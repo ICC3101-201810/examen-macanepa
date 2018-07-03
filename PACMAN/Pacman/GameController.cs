@@ -13,7 +13,7 @@ namespace Pacman
         Player player;
 
         public List<enemy> enemies { get; private set; }
-
+        int c = 0;
         int finalScore = 0;
 
         public GameController(GameForm gameForm, Player player,List<enemy> enemies)
@@ -35,11 +35,16 @@ namespace Pacman
 
         }
 
-
+        
         private void Die(object sender, EventArgs e) 
         {
             finalScore = player.points;
-            MessageBox.Show("GAME OVER\nSCORE: " + finalScore.ToString());
+            gameForm.Close();
+            if (c < 2){
+                //MessageBox.Show(c.ToString());
+                //MessageBox.Show("GAME OVER\nSCORE: " + finalScore.ToString());
+            }
+            c++;
         }
 
         
