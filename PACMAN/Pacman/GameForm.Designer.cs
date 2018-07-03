@@ -119,6 +119,7 @@
             this.Name = "GameForm";
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GameForm_FormClosed);
+            this.Load += new System.EventHandler(this.GameForm_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GameForm_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.playerImg)).EndInit();
             this.panel1.ResumeLayout(false);

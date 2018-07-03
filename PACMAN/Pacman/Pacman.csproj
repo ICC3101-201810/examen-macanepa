@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APP.cs" />
     <Compile Include="ChangeDirectionEventArgs.cs" />
     <Compile Include="enemy.cs" />
     <Compile Include="Form1.cs">

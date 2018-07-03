@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pacman
 {
+    [Serializable()]
     public class Score
     {
         public string name { get; private set; }

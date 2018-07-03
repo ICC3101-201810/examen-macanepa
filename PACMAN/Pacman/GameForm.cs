@@ -63,17 +63,51 @@ namespace Pacman
                 OnUpdate(this, EventArgs.Empty);
             }
 
+            
+            //if (x >= this.Width)
+            if (x >= 600)
+            {
+                x = 550;
+            }
+            if (x <= 0)
+            {
+                x = 2;
+            }
+            if (y >= 400)
+            {
+                y = 470;
+            }
+            if (y <= 0)
+            {
+                y = 2;
+            }
+
             playerImg.Location = new Point(x,y);
 
             if (x <= this.Width && x >= 0 && x <= this.Height)
             {
                 x += DirX * 5;
                 y += DirY * 5;
-                DirX = 0;
-                DirY = 0;
             }
 
-            foreach(enemy enemy in enemies)
+            DirX = 0;
+            DirY = 0;
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+            foreach (enemy enemy in enemies)
             {
                 
             }
@@ -146,9 +180,9 @@ namespace Pacman
             listFruit.Add(fruit);
         }
 
+        private void GameForm_Load(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }
 }
