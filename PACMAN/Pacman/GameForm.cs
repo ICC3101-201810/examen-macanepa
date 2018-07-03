@@ -30,12 +30,13 @@ namespace Pacman
 
         int e2PosX = 40;
         int e2PosY = 40;
-
+        Player player;
         List<Fruit> listFruit = new List<Fruit>();
         List<enemy> enemies = new List<enemy>();
 
         public GameForm(Player player,MainMenu mainMenu)
         {
+            this.player = player;
             InitializeComponent();
             this.mainMenu = mainMenu; 
             playerNameLabel.Text = "PLAYER: "+player.name;
@@ -85,28 +86,16 @@ namespace Pacman
             }
 
             playerImg.Location = new Point(x,y);
-
+            int playerSpeed = 10;
             if (x <= this.Width && x >= 0 && x <= this.Height)
             {
-                x += DirX * 5;
-                y += DirY * 5;
+                x += DirX * playerSpeed;
+                y += DirY * playerSpeed;
+                player.SetPos(x, y);
             }
 
             DirX = 0;
             DirY = 0;
-
-            
-
-
-
-
-
-
-
-
-
-
-
 
 
             foreach (enemy enemy in enemies)
@@ -114,6 +103,7 @@ namespace Pacman
                 
             }
             enemyRedImg.Location = new Point(enemies[0].currentPosX, enemies[0].currentPosY);
+            enemyPinkImg.Location = new Point(enemies[1].currentPosX, enemies[1].currentPosY);
             enemies[0].Move(15);
             enemies[1].Move(15);
 
