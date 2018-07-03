@@ -21,7 +21,7 @@ namespace Pacman
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Para Moverte usa:\n WASD");
+            MessageBox.Show("Para Moverte usa:\n WASD");
             IniciarEventArgs iniciarEventArgs = new IniciarEventArgs();
             iniciarEventArgs.name = playerNameTextBox.Text;
             OnIniciar(this, iniciarEventArgs);
@@ -35,6 +35,11 @@ namespace Pacman
         public void SetScores(List<Score> listaScore)
         {
             this.listaScore = listaScore;
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
